@@ -5,12 +5,10 @@
 #ifndef LABB1_INT_BUFFER_H
 #define LABB1_INT_BUFFER_H
 
+#include <algorithm>
 #include <cstdlib>
 
 class int_buffer {
-    int sz;
-
-
 public:
     explicit int_buffer ( size_t size ) ; // size_t is defined in cstdlib
     int_buffer ( const int * source , size_t size ) ;
@@ -27,6 +25,11 @@ public:
     const int * end () const ;
     ~ int_buffer () ;
 
+private:
+    int* first;
+    int* last;
+
+    void swap(int_buffer &int_buffer);
 
 };
 

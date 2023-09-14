@@ -61,6 +61,12 @@ build CMakeFiles/Labb1.dir/int_buffer.cpp.obj: CXX_COMPILER__Labb1_Debug C$:/Use
   OBJECT_DIR = CMakeFiles\Labb1.dir
   OBJECT_FILE_DIR = CMakeFiles\Labb1.dir
 
+build CMakeFiles/Labb1.dir/int_sorted.cpp.obj: CXX_COMPILER__Labb1_Debug C$:/Users/tinti/CLionProjects/Metodik/Labb1/int_sorted.cpp || cmake_object_order_depends_target_Labb1
+  DEP_FILE = CMakeFiles\Labb1.dir\int_sorted.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Labb1.dir
+  OBJECT_FILE_DIR = CMakeFiles\Labb1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Labb1
@@ -69,7 +75,7 @@ build CMakeFiles/Labb1.dir/int_buffer.cpp.obj: CXX_COMPILER__Labb1_Debug C$:/Use
 #############################################
 # Link the executable Labb1.exe
 
-build Labb1.exe: CXX_EXECUTABLE_LINKER__Labb1_Debug CMakeFiles/Labb1.dir/main.cpp.obj CMakeFiles/Labb1.dir/int_buffer.cpp.obj
+build Labb1.exe: CXX_EXECUTABLE_LINKER__Labb1_Debug CMakeFiles/Labb1.dir/main.cpp.obj CMakeFiles/Labb1.dir/int_buffer.cpp.obj CMakeFiles/Labb1.dir/int_sorted.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Labb1.dir
