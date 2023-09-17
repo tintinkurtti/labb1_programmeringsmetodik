@@ -19,27 +19,14 @@ void f(int_buffer buf){
 
 int main() {
 
+    f(int_buffer(10)); //test för buffern
 
+    int_sorted test_buf(nullptr, 0);
 
-
-    // int_buffer b(10);
-
-    int_sorted a(nullptr, 0);
-
-    int_sorted b(nullptr, 0);
-
-    a.insert(5);
-    a.insert(2);
-    a.insert(1);
-
-    b.insert(8);
-    b.insert(3);
-    b.insert(11);
-
-
-    int_sorted c = b.merge(a);
-
-    for (const int* i = c.begin(); i != c.end(); i++){
+    for (int i = 0; i <= 100; i++){
+        test_buf.insert(rand());
+    }
+    for (const int* i = test_buf.begin(); i != test_buf.end(); i++){
         std::cout << *i << ", ";
     }
 

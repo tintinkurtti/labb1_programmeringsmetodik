@@ -14,13 +14,13 @@ int_sorted sort(const int* begin, const int* end){
     return sort(begin, mid).merge(sort(mid, end));
 }
 
-int_sorted::int_sorted ( const int * source , size_t size ) : buf(size){
+int_sorted::int_sorted ( const int * source , size_t size ) : buf(source, size){
     if(size <= 1){return;}
     *this = sort(begin(),end());
 }
 
 size_t int_sorted::size () const {
-    return buf.size();
+    return std::distance(buf.begin(), end());//buf.size();
 }
 
 void int_sorted::insert ( int value ) {
@@ -42,26 +42,26 @@ int_sorted int_sorted::merge ( const int_sorted &merge_with ) const {
 
     const int* this_ptr = begin();
     const int* merge_ptr = merge_with.begin();
-    int_buffer result(size() + merge_with.size());
 
-    int index = 0;
-    // Slå samman buffrarna i rätt ordning
+    int_buffer result(size() + merge_with.size());
+    int *result_ptr = result.begin();
+
     while (this_ptr != end() && merge_ptr != merge_with.end()) {
 
         if (*this_ptr < *merge_ptr) {
-            result[index++] = *this_ptr++;
+            *result_ptr++ = *this_ptr++;
         } else {
-            result[index++] = *merge_ptr++;
+            *result_ptr++ = *merge_ptr++;
         }
     }
 
-    // Lägg till kvarvarande element från båda buffrarna (om det finns några)
+    // Lägg till kvarvarande element från båda buffrarna
     while (this_ptr != end()) {
-        result[index++] = *this_ptr++;
+        *result_ptr++ = *this_ptr++;
     }
 
     while (merge_ptr != merge_with.end()) {
-        result[index++] = *merge_ptr++;
+        *result_ptr++ = *merge_ptr++;
     }
 
     int_sorted finish(nullptr, 0);

@@ -23,6 +23,7 @@ int_buffer::int_buffer ( int_buffer && rhs ): first(nullptr), last(nullptr) { //
 int_buffer & int_buffer::operator =( const int_buffer & rhs ) { // copy assign
     int_buffer temp(rhs);
     swap(temp);
+    return *this;
 }
 
 int_buffer & int_buffer::operator =( int_buffer && rhs ) { // move assign
@@ -62,7 +63,7 @@ int_buffer::~ int_buffer () {
     delete []first;
 }
 
-void int_buffer::swap(int_buffer &int_buffer) {
-    std::swap(first, int_buffer.first);
-    std::swap(last, int_buffer.last);
+void int_buffer::swap(int_buffer &int_buf) {
+    std::swap(first, int_buf.first);
+    std::swap(last, int_buf.last);
 }
