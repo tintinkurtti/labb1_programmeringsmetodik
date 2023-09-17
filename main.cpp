@@ -16,10 +16,29 @@ void f(int_buffer buf){
     }
 }
 
+void f_range(int_buffer buf){
+
+    int j = 0;
+    for (int &e: buf){
+        j++;
+        e = j;
+    }
+
+    for (const int e: buf){
+        std::cout << e << ", ";
+    }
+}
+
 
 int main() {
 
     f(int_buffer(10)); //test för buffern
+
+    std::cout << std::endl;
+
+    f_range(int_buffer(10)); // test för range-for insättning
+
+    std::cout << std::endl;
 
     int_sorted test_buf(nullptr, 0);
 
