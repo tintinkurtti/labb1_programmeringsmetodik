@@ -11,6 +11,7 @@ void f(int_buffer buf){
     }
 
     for (const int* i = buf.begin(); i != buf.end(); i++){
+
         std::cout << *i << ", ";
 
     }
@@ -40,14 +41,61 @@ int main() {
 
     std::cout << std::endl;
 
-    int_sorted test_buf(nullptr, 0);
+    int_sorted test_buf1(nullptr, 0);
 
     for (int i = 0; i <= 100; i++){
-        test_buf.insert(rand());
+        test_buf1.insert(rand());
     }
-    for (const int* i = test_buf.begin(); i != test_buf.end(); i++){
+    for (const int* i = test_buf1.begin(); i != test_buf1.end(); i++){
         std::cout << *i << ", ";
     }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    int_sorted test_buf2(nullptr, 0);
+
+    for (int i = 0; i <= 100; i++){
+        test_buf2.insert(rand());
+    }
+    for (const int* i = test_buf2.begin(); i != test_buf2.end(); i++){
+        std::cout << *i << ", ";
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    int_sorted fin = test_buf1.merge(test_buf2);
+
+    for (const int* i = fin.begin(); i != fin.end(); i++){
+    std::cout << *i << ", ";
+    }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
+
+    int_buffer a(10);
+
+    int j = 0;
+    for (int &e: a){
+        j++;
+        e = j;
+    }
+
+    int_buffer b(a.begin(), 5);
+
+    int_buffer c(b);
+
+    c[3] = 2;
+
+    int_buffer d = c;
+
+    d[4] = 1;
+
+    for (auto e : d){
+        std::cout << e << ", ";
+    }
+
 
 
     return 0;

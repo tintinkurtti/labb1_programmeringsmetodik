@@ -8,7 +8,7 @@
 #include "int_sorted.h"
 #include "int_buffer.h"
 
-int_sorted sort(const int* begin, const int* end){
+int_sorted int_sorted::sort(const int* begin, const int* end){
     if (begin == end){return int_sorted(nullptr, 0);}
     if (begin == end -1) {return int_sorted(begin, 1);}
     ptrdiff_t half = (end-begin)/2; //pointer diff type
@@ -22,7 +22,7 @@ int_sorted::int_sorted(const int* source , size_t size): buf(source, size){
 }
 
 size_t int_sorted::size() const{
-    return std::distance(buf.begin(), end());//buf.size();
+    return std::distance(buf.begin(), end());
 }
 
 void int_sorted::insert(int value){
@@ -54,7 +54,6 @@ int_sorted int_sorted::merge(const int_sorted& merge_with) const{
         }
     }
 
-    // Lägg till kvarvarande element från båda buffrarna
     while (this_ptr != end()) {
         *result_ptr++ = *this_ptr++;
     }
