@@ -11,9 +11,7 @@ void f(int_buffer buf){
     }
 
     for (const int* i = buf.begin(); i != buf.end(); i++){
-
         std::cout << *i << ", ";
-
     }
 }
 
@@ -65,9 +63,9 @@ int main() {
     std::cout << std::endl;
     std::cout << std::endl;
 
-    int_sorted fin = test_buf1.merge(test_buf2);
+    int_sorted merged = test_buf1.merge(test_buf2);
 
-    for (const int* i = fin.begin(); i != fin.end(); i++){
+    for (const int* i = merged.begin(); i != merged.end(); i++){
     std::cout << *i << ", ";
     }
 
@@ -81,6 +79,9 @@ int main() {
         j++;
         e = j;
     }
+
+    int_buffer a1 = int_buffer(10);
+
 
     int_buffer b(a.begin(), 5);
 
@@ -96,7 +97,13 @@ int main() {
         std::cout << e << ", ";
     }
 
+    std::cout << std::endl;
 
+    int_sorted sort(d.begin(), d.size());
+
+    for (auto e : sort){
+        std::cout << e << ", ";
+    }
 
     return 0;
 
