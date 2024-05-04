@@ -1,3 +1,3 @@
-C:/Users/tinti/CLionProjects/Metodik/Labb1/cmake-build-debug/CMakeFiles/Labb1.dir
-C:/Users/tinti/CLionProjects/Metodik/Labb1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/tinti/CLionProjects/Metodik/Labb1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/tinti/OneDrive/Skola/Programmeringsmetodik/Labb1/cmake-build-debug/CMakeFiles/Labb1.dir
+C:/Users/tinti/OneDrive/Skola/Programmeringsmetodik/Labb1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/tinti/OneDrive/Skola/Programmeringsmetodik/Labb1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
