@@ -2,7 +2,7 @@
  * Labb 1, dt047g HT2023
  * @author tiku2200@student.miun.se
  * @date 2023-09-17
- * @brief .h fil för klassen int_sorted
+ * @brief .h fil för klassen int_buffer
  */
 
 #ifndef LABB1_INT_BUFFER_H
